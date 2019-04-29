@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 
 class Flat extends Component {
+  handleClick = () => {
+    this.props.getFlat(this.props.flat.lat, this.props.flat.lng)
+  }
+
   render() {
     let imgUrl = this.props.flat.imageUrl
 
@@ -10,7 +14,7 @@ class Flat extends Component {
         <div className="card-description">
           <h2>{this.props.flat.name}</h2>
         </div>
-        <a className="card-link" href="#"></a>
+        <a className="card-link" href="#" onClick={this.handleClick}></a>
       </div>
     )
   }
